@@ -1,0 +1,91 @@
+{
+  "v": "4.0",
+  "name": "Hadoop",
+  "workspace": {
+    "environments": [
+      {
+        "name": "hadoop",
+        "machineConfigs": [
+          {
+            "limits": {
+              "ram": 1000
+            },
+            "name": "ws-machine",
+            "type": "docker",
+            "source": {
+              "type": "dockerfile",
+              "content": "FROM codenvy/hadoop-dev"
+            },
+            "dev": true,
+            "servers": [],
+            "envVariables": {},
+            "links": []
+          }
+        ]
+      }
+    ],
+    "defaultEnv": "hadoop",
+    "projects": [
+      {
+        "links": [],
+        "name": "hadoop-wordcount-simple",
+        "attributes": {},
+        "type": "maven",
+        "source": {
+          "location": "https://github.com/ddementieva/hadoop-wordcount-simple.git",
+          "type": "git",
+          "parameters": {}
+        },
+        "path": "/hadoop-wordcount-simple",
+        "problems": [],
+        "mixins": []
+      }
+    ],
+    "name": "hadoop",
+    "commands": [
+      {
+        "commandLine": "cd ${current.project.path} && mvn exec:java -Dexec.mainClass=`com.javacodegeeks.examples.wordcount.WordCount`",
+        "name": "run",
+        "attributes": {
+          "previewUrl": ""
+        },
+        "type": "custom"
+      },
+      {
+        "commandLine": "mvn -f ${current.project.path} clean install",
+        "name": "build",
+        "attributes": {
+          "previewUrl": ""
+        },
+        "type": "mvn"
+      },
+      {
+        "commandLine": "cd ${current.project.path} && mvn clean install && mvn exec:java -Dexec.mainClass=`com.javacodegeeks.examples.wordcount.WordCount`",
+        "name": "build and run",
+        "attributes": {
+          "previewUrl": ""
+        },
+        "type": "custom"
+      }
+    ],
+    "links": []
+  },
+  "ide": {
+    "onProjectsLoaded": {
+      "actions": [
+        {
+          "properties": {
+            "name": "build and run"
+          },
+          "id": "runCommand"
+        },
+        {
+          "properties": {
+            "file": "/hadoop-wordcount-simple/src/main/java/com/javacodegeeks/examples/wordcount/WordCount.java"
+          },
+          "id": "openFile"
+        }
+      ]
+    }
+  }
+}
