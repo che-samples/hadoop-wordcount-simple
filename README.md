@@ -10,8 +10,6 @@ FROM [codenvy/ubuntu_jdk8](https://hub.docker.com/r/codenvy/hadoop-dev/)
 
 # Commands
 
-| #       | Command           | 
-| :------------- |:------------- |
-| 1      | `cd ${current.project.path} && mvn clean install && mvn exec:java -Dexec.mainClass="com.javacodegeeks.examples.wordcount.WordCount"` |
-
-
+| #       | Description           | Command  |
+| :------------- |:-------------| :-----|
+| 1      | Build and Run | `cd ${current.project.path} && mvn clean install && mvn exec:java -Dexec.mainClass="com.javacodegeeks.examples.wordcount.WordCount"` |
