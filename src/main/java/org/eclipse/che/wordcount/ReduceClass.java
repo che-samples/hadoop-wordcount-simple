@@ -1,4 +1,4 @@
-package com.javacodegeeks.examples.wordcount;
+package org.eclipse.che.wordcount;
 
 import java.io.IOException;
 import java.util.Iterator;

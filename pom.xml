@@ -43,7 +43,7 @@
                 </execution>
             </executions>
 	    <configuration>
-              <mainClass>com.javacodegeeks.examples.wordcount.WordCount</mainClass>
+              <mainClass>org.eclipse.che.wordcount.WordCount</mainClass>
               <arguments>
                   <argument>Input.txt</argument>
                   <argument>output.txt</argument>

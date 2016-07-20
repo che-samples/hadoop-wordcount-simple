@@ -1,4 +1,4 @@
-package com.javacodegeeks.examples.wordcount;
+package org.eclipse.che.wordcount;
 
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
@@ -14,8 +14,6 @@ import org.apache.hadoop.util.ToolRunner;
 /**
  * The entry point for the WordCount example,
  * which setup the Hadoop job with Map and Reduce Class
- * 
- * @author Raman
  */
 public class WordCount extends Configured implements Tool{
 	
